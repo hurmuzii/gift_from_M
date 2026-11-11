@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>هدية من مينا 🎀</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&family=Aref+Ruqaa:wght@700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff0f6;--bg2:#e9d8ff;--card:#fffafd;--ink:#4d1d44;--soft:#9a5a8f;--pink:#ff5c9a;--lav:#b58cff;--shadow:rgba(181,140,255,.3);
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#2a1030;--bg2:#1f1a45;--card:#38174a;--ink:#ffe6f3;--soft:#e0b4ff;--pink:#ff7ab0;--lav:#c9a6ff;--shadow:rgba(0,0,0,.4)}}
+:root[data-theme="dark"]{--bg:#2a1030;--bg2:#1f1a45;--card:#38174a;--ink:#ffe6f3;--soft:#e0b4ff;--pink:#ff7ab0;--lav:#c9a6ff;--shadow:rgba(0,0,0,.4)}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;min-height:100vh;font-family:'Cairo',system-ui,sans-serif;color:var(--ink);background:linear-gradient(160deg,var(--bg),var(--bg2));overflow-x:hidden;text-align:center}
+#bg{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.fl{position:absolute;bottom:-40px;animation:up linear forwards}
+@keyframes up{to{transform:translateY(-110vh) rotate(25deg);opacity:0}}
+main{position:relative;z-index:1;max-width:520px;margin:0 auto;padding:24px 18px 60px}
+.screen{display:none}.screen.on{display:block}
+h1{font-family:'Aref Ruqaa',serif;font-size:2.4rem;margin:10px 0;color:var(--pink);line-height:1.4}
+h2{font-size:1.35rem;margin:22px 0 12px}
+p{line-height:1.9;margin:8px 0}
+.big{font-size:6rem;display:inline-block;cursor:pointer;user-select:none;animation:bob 2.4s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-12px) rotate(4deg)}}
+.btn{font:inherit;font-weight:700;border:0;background:var(--pink);color:#fff;padding:13px 24px;border-radius:999px;font-size:1.02rem;cursor:pointer;box-shadow:0 8px 20px var(--shadow);margin:6px 4px}
+.btn.alt{background:var(--lav)}.btn:active{transform:scale(.95)}
+.card{background:var(--card);border-radius:26px;padding:22px 18px;box-shadow:0 10px 30px var(--shadow);margin:14px 0}
+.msg{min-height:96px;font-size:1.12rem;display:flex;align-items:center;justify-content:center;font-weight:700}
+input,textarea{font:inherit;width:100%;padding:12px 14px;border-radius:16px;border:2px solid var(--lav);background:var(--card);color:var(--ink);font-size:1rem;text-align:right;margin:4px 0 10px}
+textarea{min-height:90px;resize:vertical}
+label{display:block;text-align:right;font-weight:700;font-size:.95rem;color:var(--soft)}
+details{background:var(--card);border-radius:22px;padding:12px 16px;margin:12px 0;box-shadow:0 8px 20px var(--shadow);text-align:right}
+summary{font-weight:700;cursor:pointer}
+.moods{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.moods button{font:inherit;font-weight:700;border:2px solid var(--lav);background:var(--card);color:var(--ink);border-radius:18px;padding:10px 14px;cursor:pointer;font-size:1rem}
+.nav{display:flex;flex-wrap:wrap;justify-content:center}
+.pop{position:fixed;font-size:1.8rem;pointer-events:none;z-index:9;animation:pop .9s ease-out forwards}
+@keyframes pop{to{transform:translateY(-90px) scale(1.5);opacity:0}}
+#orb{width:150px;height:150px;border-radius:50%;margin:24px auto;background:radial-gradient(circle at 35% 30%,#fff,var(--pink));box-shadow:0 0 40px var(--pink);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;transition:transform 4s ease-in-out}
+#back{display:none;position:fixed;top:calc(env(safe-area-inset-top,0px) + 8px);inset-inline-start:10px;z-index:20;font-size:.85rem;padding:8px 14px}
+#link{direction:ltr;text-align:left;font-size:.8rem}
+.note{font-size:.85rem;color:var(--soft)}
+@media (prefers-reduced-motion:reduce){.big,.fl{animation:none}#orb{transition:none}}
+</style>
+</head>
+<body>
+<div id="bg" aria-hidden="true"></div>
+<button class="btn alt" id="back">← رجوع للتجهيز</button>
+<main>
+
+<!-- ===== شاشة التجهيز (مينا) ===== -->
+<section class="screen" id="b">
+  <div style="font-size:3.4rem">🎀</div>
+  <h1>جهّزي هدية لصديقتج</h1>
+  <p class="note">اكتبي اسم البنت ورسالة خاصة إلها، وبعدين انسخي الرابط وأرسليه. للبنت الثانية غيّري الاسم بس.</p>
+  <div class="card">
+    <label for="fn">اسم البنت</label>
+    <input id="fn" maxlength="24" placeholder="مثلاً: سارة">
+    <label for="fm">رسالة خاصة منج إلها (اختياري)</label>
+    <textarea id="fm" maxlength="400" placeholder="اكتبي إلها شي يخصها وحدها 💗"></textarea>
+  </div>
+  <details>
+    <summary>تعديل النصوص العامة ✏️</summary>
+    <p class="note">كل سطر = جملة. تنحفظ على جهازج للبنات الجاية. وكل ما تعدلين أكثر، الرابط يطول.</p>
+    <label for="ff">اسم المرسلة</label><input id="ff">
+    <label for="fw">كلام الترحيب</label><textarea id="fw"></textarea>
+    <label for="fo">الشعور والرد (كل سطر: الشعور | الرد)</label><textarea id="fo" style="min-height:150px"></textarea>
+    <label for="fd">الأدعية</label><textarea id="fd" style="min-height:150px"></textarea>
+    <label for="fs">الكلمات الحلوة</label><textarea id="fs" style="min-height:150px"></textarea>
+    <label for="fc">كلام الختام</label><textarea id="fc"></textarea>
+    <button class="btn alt" id="reset">رجّعي النصوص الأصلية</button>
+  </details>
+  <div class="nav">
+    <button class="btn alt" id="prev">معاينة 👀</button>
+    <button class="btn" id="make">جهّزي الرابط ✨</button>
+  </div>
+  <div class="card" id="out" style="display:none">
+    <label for="link">رابط الهدية</label>
+    <input id="link" readonly>
+    <p class="note" id="len"></p>
+    <button class="btn" id="copy">نسخ 📋</button>
+    <button class="btn alt" id="share">مشاركة 📤</button>
+  </div>
+</section>
+
+<!-- ===== صفحة الهدية (للبنت) ===== -->
+<section class="screen" id="s0">
+  <p style="margin-top:12vh" id="intro"></p>
+  <div class="big" id="open" role="button" tabindex="0" aria-label="افتحي الهدية">🎁</div>
+  <p>اضغطي عليها 💗</p>
+</section>
+
+<section class="screen" id="s1">
+  <div class="big" id="bear" role="button" tabindex="0">🧸</div>
+  <h1 id="title"></h1>
+  <div class="card"><p style="font-weight:900;font-size:1.12rem;margin:0" id="welcome"></p></div>
+  <div class="card" id="pm" style="display:none"><p class="note" style="margin-top:0" id="pmh"></p><p style="font-weight:700;margin:0;white-space:pre-line" id="pmt"></p></div>
+  <div class="nav">
+    <button class="btn" data-go="s2">شلونج اليوم؟ 💭</button>
+    <button class="btn alt" data-go="s3">تنفسي معاي 🫧</button>
+    <button class="btn" data-go="s4">أدعية إلج 🤲</button>
+    <button class="btn alt" data-go="s5">كلمة حلوة 💌</button>
+  </div>
+</section>
+
+<section class="screen" id="s2">
+  <h2>شلونج اليوم؟ 💭</h2>
+  <div class="moods" id="moods"></div>
+  <div class="card msg" id="moodMsg">اختاري شعورج</div>
+  <button class="btn alt" data-go="s1">رجوع</button>
+</section>
+
+<section class="screen" id="s3">
+  <h2>خذي نفس عميق 🫧</h2>
+  <p>تنفسي مع الدائرة، شهيق وزفير، وخلي كل شي يهدأ.</p>
+  <div id="orb">شهيق…</div>
+  <button class="btn" id="breath">ابدئي 🌸</button>
+  <button class="btn alt" data-go="s1">رجوع</button>
+</section>
+
+<section class="screen" id="s4">
+  <h2>أدعية إلج 🤲</h2>
+  <div class="card msg" id="dua">اضغطي على الزر</div>
+  <button class="btn" id="nextDua">دعاء ثاني 🌷</button>
+  <button class="btn alt" data-go="s1">رجوع</button>
+</section>
+
+<section class="screen" id="s5">
+  <h2>كلمة حلوة إلج 💌</h2>
+  <div class="big" id="bear2" style="font-size:5rem">🐻</div>
+  <div class="card msg" id="sweet">اضغطي الدبدوب أو الزر</div>
+  <button class="btn" id="nextSweet">كلمة ثانية 💕</button>
+  <button class="btn alt" data-go="s1">رجوع</button>
+  <p style="margin-top:30px;font-weight:700;white-space:pre-line" id="closing"></p>
+</section>
+
+</main>
+<script>
+(function(){
+var BASE="https://gift-from-mina.vercel.app";
+var $=function(s){return document.querySelector(s)};
+var D={f:"مينا",
+w:"كلت أسوي شي لكل بنوتة حلوة، لأن ماكو أحد ينتبه لتعبنا، وعلينا ضغوط وايد.\nفخليت هذا الموقع حضن صغير إلج 🤍",
+c:"من مينا، الأحلى بنوتة 🎀\nوياج دائماً، حتى لو من بعيد 🤍",
+o:[["تعبانة 😔","تعبج مو ضعف، تعبج يعني إنج تحملتي وايد. خذي راحة اليوم، وإنتِ تستاهلين تهدين 🤍"],["مضغوطة 😵‍💫","عليج ضغوط وايد وأنا أحس بيج. خلي كل شي ياخذ وقته، وإنتِ مو لازم تتحملين كلشي لحالج 🌷"],["وحدانية 🥺","مو لحالج والله، في ناس تحبج وتفكر بيج، وأولهم أنا. أرسليلي إذا تحتاجين حد 💗"],["بخير 😊","الحمد لله! خليج هيج منورة، وخلي الدنيا تشوف ضحكتج ✨"],["فرحانة 🥳","يا حلوتي! ربي يديم فرحج، وتنفرحين أكثر وأكثر 🎀"]],
+d:["اللهم اجعل أيامج كلها فرح وسعادة 🌸","اللهم ارزقج راحة البال وطمأنينة القلب 🤍","اللهم حقق لج كل أمنية حلوة بقلبج ✨","اللهم احفظج وأبعد عنج كل شر وهم 🛡️","اللهم اكتب لج الخير حيثما كان وارضج به 🌷","اللهم خفف عنج ضغوطج وهون عليج كل صعب 🤲","اللهم ارزقج صحبة طيبة وقلباً مرتاحاً 🧸","اللهم عوّضج عن كل تعب بفرح يسوى الدنيا 💗"],
+s:["إنتِ أحلى مما تتخيلين، صدقيني 🌸","ضحكتج تنور اليوم كله 🌞","إنتِ تستاهلين كل خير يصير بحياتج 💗","حتى لو الدنيا ضغطت عليج، إنتِ أقوى منها 💪","وجودج بحياة اللي حولج نعمة 🌷","إنتِ لطيفة وكلشي حلو وياج 🧸","اشتقتلج حتى لو شفتج اليوم 😂🤍","اليوم تعبتي وايد؟ يكفي، خذي لج استراحة حلوة ☕"]};
+var cfg={},preview=false;
+function ge(k){return cfg[k]!=null?cfg[k]:D[k]}
+
+/* ---- ترميز الرابط: ضغط + base32 (حروف وأرقام فقط) ---- */
+var A="abcdefghijklmnopqrstuvwxyz234567";
+function b32(u){var o="",bits=0,v=0;for(var i=0;i<u.length;i++){v=(v<<8)|u[i];bits+=8;while(bits>=5){o+=A[(v>>>(bits-5))&31];bits-=5}}if(bits>0)o+=A[(v<<(5-bits))&31];return o}
+function unb32(s){var o=[],bits=0,v=0;for(var i=0;i<s.length;i++){var x=A.indexOf(s[i]);if(x<0)continue;v=(v<<5)|x;bits+=5;if(bits>=8){o.push((v>>>(bits-8))&255);bits-=8}}return new Uint8Array(o)}
+async function pipe(bytes,ts){var st=new Blob([bytes]).stream().pipeThrough(ts);return new Uint8Array(await new Response(st).arrayBuffer())}
+async function enc(o){var u=new TextEncoder().encode(JSON.stringify(o));
+try{return"g-"+b32(await pipe(u,new CompressionStream("deflate-raw")))}catch(e){return"r-"+b32(u)}}
+async function dec(h){var t=h.slice(0,2),u=unb32(h.slice(2));
+if(t==="g-")u=await pipe(u,new DecompressionStream("deflate-raw"));
+return JSON.parse(new TextDecoder().decode(u))}
+
+/* ---- أدوات ---- */
+function go(id){document.querySelectorAll('.screen').forEach(function(e){e.classList.remove('on')});$('#'+id).classList.add('on');window.scrollTo(0,0);burst(6)}
+function pop(x,y,t){var e=document.createElement('div');e.className='pop';e.textContent=t||'💗';e.style.left=x+'px';e.style.top=y+'px';document.body.appendChild(e);setTimeout(function(){e.remove()},900)}
+function burst(n){var em=['💗','💖','🌸','✨','🎀','💕'];for(var i=0;i<n;i++)pop(Math.random()*innerWidth*.8+20,innerHeight*.4+Math.random()*120,em[i%em.length])}
+document.addEventListener('click',function(e){pop(e.clientX-12,e.clientY-12,'💗')});
+document.querySelectorAll('[data-go]').forEach(function(b){b.onclick=function(){go(b.dataset.go)}});
+setInterval(function(){var f=document.createElement('div');f.className='fl';f.textContent=['💗','🌸','🎀','💕','✨','🫧'][Math.floor(Math.random()*6)];f.style.left=Math.random()*100+'%';f.style.fontSize=(14+Math.random()*22)+'px';f.style.animationDuration=(6+Math.random()*6)+'s';$('#bg').appendChild(f);setTimeout(function(){f.remove()},12000)},500);
+function lines(v){return v.split('\n').map(function(x){return x.trim()}).filter(Boolean)}
+
+/* ---- صفحة الهدية ---- */
+var si=0,di=0,bi=0,br=null,built=false;
+function startGuest(){
+var n=(cfg.n||"").trim(),m=(cfg.m||"").trim(),f=ge('f');
+$('#intro').textContent="وصلتج هدية صغيرة من "+f+"…";
+$('#title').textContent=n?("إلج يا "+n+" 🎀"):"إلج يا حلوة 🎀";
+$('#welcome').innerHTML="";ge('w').split('\n').forEach(function(l,i){if(i)$('#welcome').appendChild(document.createElement('br'));$('#welcome').appendChild(document.createTextNode(l))});
+if(m){$('#pm').style.display='';$('#pmh').textContent="رسالة خاصة من "+f+" إلج 💌";$('#pmt').textContent=m}else $('#pm').style.display='none';
+$('#closing').textContent=ge('c');
+var mo=ge('o');$('#moods').innerHTML="";
+mo.forEach(function(x){var b=document.createElement('button');b.textContent=x[0];b.onclick=function(){$('#moodMsg').textContent=x[1];burst(10)};$('#moods').appendChild(b)});
+if(!built){built=true;
+function open(){go('s1');burst(14)}
+$('#open').onclick=open;$('#open').onkeydown=function(e){if(e.key==='Enter')open()};
+$('#bear').onclick=function(){this.textContent=['🧸','🐻','🐼','🐨'][++bi%4];burst(8)};
+$('#nextDua').onclick=function(){var d=ge('d');$('#dua').textContent=d[di++%d.length];burst(8)};
+function sw(){var s=ge('s');$('#sweet').textContent=s[si++%s.length];burst(8)}
+$('#nextSweet').onclick=sw;$('#bear2').onclick=sw;
+$('#breath').onclick=function(){var o=$('#orb'),b=this;if(br){clearInterval(br);br=null;o.style.transform='scale(1)';o.textContent='شهيق…';b.textContent='ابدئي 🌸';return}
+b.textContent='وقف';var inh=true;function step(){o.style.transform=inh?'scale(1.45)':'scale(1)';o.textContent=inh?'شهيق…':'زفير…';inh=!inh}
+setTimeout(step,50);br=setInterval(step,4000)}}
+$('#moodMsg').textContent='اختاري شعورج';$('#dua').textContent='اضغطي على الزر';$('#sweet').textContent='اضغطي الدبدوب أو الزر';
+go('s0')}
+
+/* ---- شاشة التجهيز ---- */
+var KEY="minaDraft";
+function fill(d){$('#ff').value=d.f;$('#fw').value=d.w;$('#fc').value=d.c;$('#fo').value=d.o.map(function(x){return x[0]+" | "+x[1]}).join('\n');$('#fd').value=d.d.join('\n');$('#fs').value=d.s.join('\n')}
+function read(){return{f:$('#ff').value.trim()||D.f,w:$('#fw').value.trim()||D.w,c:$('#fc').value.trim()||D.c,
+o:lines($('#fo').value).map(function(l){var p=l.split('|');return[p[0].trim(),(p.slice(1).join('|')||'').trim()]}).filter(function(x){return x[0]&&x[1]}),
+d:lines($('#fd').value),s:lines($('#fs').value)}}
+function getCfg(){var r=read(),o={};
+['f','w','c','o','d','s'].forEach(function(k){if(!r[k]||!r[k].length)r[k]=D[k];if(JSON.stringify(r[k])!==JSON.stringify(D[k]))o[k]=r[k]});
+var n=$('#fn').value.trim(),m=$('#fm').value.trim();if(n)o.n=n;if(m)o.m=m;return o}
+function saveDraft(){try{var c=getCfg();delete c.n;delete c.m;localStorage.setItem(KEY,JSON.stringify(c))}catch(e){}}
+function startBuilder(){var d=JSON.parse(JSON.stringify(D));
+try{var s=JSON.parse(localStorage.getItem(KEY)||"{}");for(var k in s)d[k]=s[k]}catch(e){}
+fill(d);document.querySelectorAll('#b details textarea,#b details input').forEach(function(e){e.oninput=saveDraft});
+$('#reset').onclick=function(){fill(D);saveDraft()};
+$('#prev').onclick=function(){cfg=getCfg();preview=true;$('#back').style.display='block';startGuest()};
+$('#back').onclick=function(){preview=false;$('#back').style.display='none';go('b')};
+$('#make').onclick=async function(){saveDraft();var c=getCfg();if(!c.n){$('#fn').focus();return}
+var code=await enc(c),l=(BASE?BASE:"")+"#"+code;$('#link').value=l;$('#out').style.display='';
+$('#len').textContent=l.length>600?"الرابط طويل شوي بسبب التعديلات، بس يشتغل عادي 👍":"جاهز 💗 أرسليه للبنت.";$('#out').scrollIntoView({behavior:'smooth'})};
+$('#copy').onclick=function(){var i=$('#link');i.select();var ok=false;try{ok=document.execCommand('copy')}catch(e){}
+if(!ok&&navigator.clipboard)navigator.clipboard.writeText(i.value).then(function(){$('#copy').textContent='اننسخ ✅'},function(){});else $('#copy').textContent=ok?'اننسخ ✅':'انسخيه يدوياً'};
+$('#share').onclick=function(){var l=$('#link').value;if(navigator.share)navigator.share({title:"هدية من مينا 🎀",url:l}).catch(function(){});else $('#copy').click()};
+go('b')}
+
+/* ---- البداية ---- */
+var h=location.hash.replace('#','');
+if(/^[gr]-[a-z2-7]+$/.test(h)){dec(h).then(function(c){cfg=c;startGuest()},function(){startBuilder()})}
+else startBuilder();
+window.addEventListener('hashchange',function(){if(preview)return;location.reload()});
+})();
+</script>
+</body>
+</html>
